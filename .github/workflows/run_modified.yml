@@ -35,7 +35,7 @@ jobs:
                             private|category-public-tracker(+tracker)|category-ads-all|bilibili(-bilibili-cdn,-bilibili-game)|cn(-private)|\
                             geolocation-cn(+cn-lite,-private,-category-public-tracker,-bilibili,-google,-apple,-microsoft)|\
                             geolocation-!cn(-private,-category-public-tracker,-category-ads-all,-18comic,-google,-apple,-microsoft,-category-entertainment,-category-social-media-!cn,-category-cryptocurrency,-category-ai-!cn)|\
-                            bahamut|bytedance@!cn|category-ai-!cn|category-games-!cn(-category-game-platforms-download)|category-social-media-!cn|category-cryptocurrency|\
+                            bahamut|bytedance@!cn|category-ai-!cn(+aiSpecial)|category-games-!cn(-category-game-platforms-download)|category-social-media-!cn|category-cryptocurrency|\
                             google|apple|microsoft|category-entertainment(-my-TW,-category-games-!cn,-bahamut,-bilibili,-bytedance@!cn)|18comic|" >> $GITHUB_ENV
           echo "GEOSITE_LITE_RULES=my-REJECT|my-DIRECT|my-Rules|my-IPLocation|\
                             private|bilibili|cn(-private)|\
@@ -418,16 +418,6 @@ jobs:
             --src ./meta-src/geo-lite/geosite --custom-src ./custom-src/geo-lite/geosite \
             --out ./community/data-lite --out-rs ./community/data-lite-rs \
             --rules "$GEOSITE_LITE_RULES"
-          # category-ai-chat-!cn: add extra rules, then sort and de-duplicate
-          for d in ./community/data ./community/data-lite ./community/data-rs ./community/data-lite-rs; do
-            f="$d/category-ai-chat-!cn"
-            if [ -f "$f" ]; then
-              printf '%s\n' "domain:bing.com" "domain:google.com" "domain:google.com.hk" "domain:google.cn" >> "$f"
-              # "domain:x" and bare "x" are the same rule; unify so sort -u removes duplicates
-              sed -i 's/^domain://' "$f"
-              LC_ALL=C sort -u -o "$f" "$f"
-            fi
-          done
 
       - name: Clean geoip and geoip-lite from .list files
         run: |
