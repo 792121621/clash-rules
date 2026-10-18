@@ -33,7 +33,7 @@ jobs:
           # ---------------------------------------------------------------
           echo "GEOSITE_RULES=private|category-ads-all|cn(-private)|geolocation-cn(+cn-lite,-private,-bilibili,-google,-apple,-microsoft)|bilibili|\
                             geolocation-!cn(-private,-category-ads-all,-18comic,-google,-apple,-microsoft,-category-entertainment,-category-social-media-!cn,-category-cryptocurrency,-category-ai-!cn)|\
-                            category-entertainment(-my-HK,-my-JP,-my-TW,-category-games-!cn,-bahamu,-bytedance@!cn)|\
+                            category-entertainment(-my-HK,-my-JP,-my-TW,-category-games-!cn,-bahamut,-bytedance@!cn)|\
                             category-ai-!cn(+aispecial)|category-games-!cn(-category-game-platforms-download)|category-social-media-!cn|category-cryptocurrency|\
                             bahamut|bytedance@!cn|\
                             google|apple|microsoft|18comic|\
