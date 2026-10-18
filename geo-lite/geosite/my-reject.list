@@ -1,14 +1,20 @@
+# 规则后面用#会不识别
+
 # 以下是乐播投屏更新地址
 # +.hpplay.cn
-activity.hpplay.cn #强制更新
-gslb.hpplay.cn #限制观看次数
 # hotupgrade.hpplay.cn
 # imdns.hpplay.cn
+#强制更新
+activity.hpplay.cn
+#限制观看次数
+gslb.hpplay.cn
 
 # 以下是Photoshop更新地址
-'*.adobestats.io' #3ubq3714f3.adobestats.io to8byuxf3g.adobestats.io
-# cc-api-data.adobe.io #不是
 ic.adobe.io
+#不是
+# cc-api-data.adobe.io
+#匹配3ubq3714f3.adobestats.io to8byuxf3g.adobestats.io
+'*.adobestats.io'
 
 # SOURCE: 哔哩哔哩.yaml
 DOMAIN,httpdns.bilivideo.com
