@@ -148,7 +148,7 @@ jobs:
           cat > "$RUNNER_TEMP/clean_yaml.py" <<'PYEOF'
           #!/usr/bin/env python3
           """Clean upstream clash *.yaml rules into geosite / geoip *.list data and merge
-          them into my-REJECT.list / my-DIRECT.list / my-IPLocation.list."""
+          them into my-reject.list / my-direct.list / my-iplocation.list."""
           import argparse
           import ipaddress
           import os
@@ -164,7 +164,7 @@ jobs:
           IP_TYPES = {'IP-CIDR', 'IP-CIDR6'}
           REJECT_POLICIES = {'REJECT', 'REJECT-DROP'}
           DIRECT_POLICIES = {'DIRECT'}
-          CATEGORIES = ['REJECT', 'DIRECT', 'IPLocation']      # -> my-<name>.list
+          CATEGORIES = ['reject', 'direct', 'iplocation']      # -> my-<name>.list
           NO_RESOLVE = 0    # set by --no-resolve: 0 keep as pulled / 1 add to all / 2 remove from all
           TARGETS = {
               'site': ['geo/geosite', 'geo-lite/geosite'],
@@ -248,10 +248,10 @@ jobs:
 
           def category(policy):
               if policy in REJECT_POLICIES:
-                  return 'REJECT'
+                  return 'reject'
               if policy in DIRECT_POLICIES:
-                  return 'DIRECT'
-              return 'IPLocation'
+                  return 'direct'
+              return 'iplocation'
 
 
           def fmt(kind, key, nr):
@@ -395,6 +395,6 @@ jobs:
       - name: Auto Commit Changes
         uses: stefanzweifel/git-auto-commit-action@master
         with:
-          commit_message: "chore: sync my-REJECT / my-DIRECT / my-IPLocation rules from upstream"
+          commit_message: "chore: sync my-reject / my-direct / my-iplocation rules from upstream"
           commit_author: "github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
           file_pattern: geo geo-lite
