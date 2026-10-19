@@ -31,25 +31,23 @@ jobs:
           #   => 保留 google、cn、bing 三个文件；google 先并入 google-cn，再去掉与 google@ads 重复的规则
           # geosite 里的 cn-lite 由 geolocation-cn(geo) + cn(geo-lite) 合并而来，需要保留就写进变量
           # ---------------------------------------------------------------
-          echo "GEOSITE_RULES=my-REJECT|my-DIRECT|my-HK(+viu)|my-JP(+niconico)|my-SG|my-TW(+litv)|my-Rules|my-IPLocation|\
-                            private|category-ads-all|cn(-private)|geolocation-cn(+cn-lite,-private,-bilibili,-google,-apple,-microsoft)|bilibili|\
+          echo "GEOSITE_RULES=my-reject|my-direct|my-hk(+viu)|my-jp(+niconico)|my-sg|my-tw(+litv)|my-rules|my-iplocation|\
+                            private|category-ads-all|bilibili|cn(-private)|\
+                            geolocation-cn(+cn-lite,-private,-bilibili,-google,-apple,-microsoft)|\
                             geolocation-!cn(-private,-category-ads-all,-18comic,-google,-apple,-microsoft,-category-entertainment,-category-social-media-!cn,-category-cryptocurrency,-category-ai-!cn)|\
-                            category-entertainment(-my-HK,-my-JP,-my-TW,-category-games-!cn,-bahamut,-bytedance@!cn)|\
-                            category-ai-!cn(+aispecial)|category-games-!cn(-category-game-platforms-download)|category-social-media-!cn|category-cryptocurrency|\
-                            bahamut|bytedance@!cn|\
-                            google|apple|microsoft|18comic|\
-                            my-REJECT|my-DIRECT|my-HK(+viu)|my-JP(+niconico)|my-SG|my-TW(+litv)|my-Rules|my-IPLocation|" >> $GITHUB_ENV
-          echo "GEOSITE_LITE_RULES=private|cn(-private)|bilibili|\
-                                  bahamut|\
-                                  google|apple|microsoft|\
-                                  my-REJECT|my-DIRECT|my-Rules|my-IPLocation|" >> $GITHUB_ENV
+                            bahamut|bytedance@!cn|category-ai-!cn(+aispecial)|category-games-!cn|category-social-media-!cn|category-cryptocurrency|\
+                            google|apple|microsoft|category-entertainment(-category-games-!cn,-bahamut,-bytedance@!cn,-viu,-niconico,-litv)|18comic|" >> $GITHUB_ENV
+          echo "GEOSITE_LITE_RULES=my-reject|my-direct|my-rules|my-iplocation|\
+                            private|bilibili|cn(-private)|\
+                            bahamut|\
+                            google|apple|microsoft|" >> $GITHUB_ENV
           
-          echo "GEOIP_RULES=private|cn|hk|jp|sg|tw|\
-                            cloudflare|cloudfront|facebook|fastly|google|netflix|telegram|twitter|\
-                            my-REJECT|my-DIRECT|my-Rules|my-IPLocation|" >> $GITHUB_ENV
-          echo "GEOIP_LITE_RULES=private|cn|jp|\
-                                apple|bilibili|cloudflare|cloudfront|facebook|google|netflix|telegram|twitter|\
-                                my-REJECT|my-DIRECT|my-Rules|my-IPLocation|" >> $GITHUB_ENV
+          echo "GEOIP_RULES=my-reject|my-direct|my-rules|my-iplocation|\
+                            private|cn|hk|jp|sg|tw|\
+                            cloudflare|cloudfront|facebook|fastly|google|netflix|telegram|twitter|" >> $GITHUB_ENV
+          echo "GEOIP_LITE_RULES=my-reject|my-direct|my-rules|my-iplocation|\
+                                private|cn|jp|\
+                                apple|bilibili|cloudflare|cloudfront|facebook|google|netflix|telegram|twitter|" >> $GITHUB_ENV
         shell: bash
 
       - name: Checkout the current repo
