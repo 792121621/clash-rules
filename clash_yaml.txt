@@ -3,6 +3,7 @@ https://raw.githubusercontent.com/Pawdroid/Free-servers/refs/heads/main/sub
 
 
 https://raw.githubusercontent.com/cbusifabcap/daily_free_vpn/refs/heads/main/sub/sub.yml
+https://raw.githubusercontent.com/dongchengjie/airport/refs/heads/main/subs/merged/tested_within.yaml
 
 
 https://raw.githubusercontent.com/hello-world-1989/cn-news/refs/heads/main/end-gfw-free
