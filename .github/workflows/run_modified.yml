@@ -34,9 +34,9 @@ jobs:
           echo "GEOSITE_RULES=my-reject|my-direct|my-hk(+viu)|my-jp(+niconico)|my-sg|my-tw(+litv)|my-rules|my-iplocation(-my-iplocation-sub)|\
                             private|category-ads-all|bilibili|cn(-private)|\
                             geolocation-cn(+cn-lite,-private,-bilibili,-google,-apple,-microsoft)|\
-                            geolocation-!cn(-private,-category-ads-all,-18comic,-google,-apple,-microsoft,-category-entertainment,-category-social-media-!cn,-category-cryptocurrency,-category-ai-!cn)|\
-                            bahamut|bytedance@!cn|category-ai-!cn(+ai-add)|category-games-!cn|category-social-media-!cn|category-cryptocurrency|\
-                            google|apple|microsoft|category-entertainment(-category-games-!cn,-bahamut,-bytedance@!cn,-viu,-niconico,-litv)|18comic|" >> $GITHUB_ENV
+                            geolocation-!cn(-private,-category-ads-all,-google,-apple,-microsoft,-category-entertainment,-category-ai-!cn,-category-social-media-!cn,-category-cryptocurrency,-category-porn,-category-ip-geo-detect)|\
+                            bahamut|bytedance@!cn|category-ai-!cn|category-games-!cn|category-social-media-!cn|category-cryptocurrency|category-porn|category-ip-geo-detect|\
+                            google|apple|microsoft|category-entertainment(-category-games-!cn,-category-porn,-bahamut,-bytedance@!cn,-viu,-niconico,-litv)|" >> $GITHUB_ENV
           echo "GEOSITE_LITE_RULES=my-reject|my-direct|my-rules|my-iplocation(-my-iplocation-sub)|\
                             private|bilibili|cn(-private)|\
                             bahamut|\
