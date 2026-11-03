@@ -6,6 +6,7 @@ on:
   #     - main
   schedule:
     - cron: "0 1 1 * *" # 每月1号1点自动运行
+      timezone: 'Asia/Shanghai'
   workflow_dispatch:
 
 permissions:
