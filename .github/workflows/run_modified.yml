@@ -3,7 +3,8 @@ name: Build rules dat files
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 1 2 * *" # 每月1号1点自动运行
+    - cron: "0 2 1 * *" # 每月1号2点自动运行
+      timezone: 'Asia/Shanghai'
 
 jobs:
   build:
