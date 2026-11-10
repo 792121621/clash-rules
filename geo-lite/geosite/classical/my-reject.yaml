@@ -1,0 +1,10 @@
+payload:
+    - DOMAIN-SUFFIX,httpdns.aliyuncs.com
+    - DOMAIN-SUFFIX,httpdns.bilivideo.com
+    - DOMAIN-SUFFIX,tracker.xiaohongshu.com
+    - DOMAIN,activity.hpplay.cn
+    - DOMAIN,gslb.hpplay.cn
+    - DOMAIN,ic.adobe.io
+    - DOMAIN-KEYWORD,app-analytics-services
+    - DOMAIN-KEYWORD,httpdns
+    - DOMAIN-KEYWORD,httpsdns
