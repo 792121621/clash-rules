@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "activity.hpplay.cn",
+        "gslb.hpplay.cn",
+        "ic.adobe.io"
+      ],
+      "domain_suffix": [
+        "httpdns.aliyuncs.com",
+        "httpdns.bilivideo.com",
+        "tracker.xiaohongshu.com"
+      ],
+      "domain_keyword": [
+        "app-analytics-services",
+        "httpdns",
+        "httpsdns"
+      ]
+    }
+  ]
+}
